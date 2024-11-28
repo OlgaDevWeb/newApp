@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { TheHeaderLearn } from "@/components/theheaderlearn/theheaderlearn";
 import { tems } from "../../../components/util/team";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
 
@@ -8,11 +7,7 @@ export const metadata: Metadata = {
   description:
     "Европейский портуральский для русскоговоряших. Учим слова и спряжения глаголов",
 };
-type Props = {
-  params: {
-    team: string;
-  };
-};
+
 export default async function Layout({
   children,
   params,

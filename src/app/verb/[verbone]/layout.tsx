@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { TheHeaderLearn } from "@/components/theheaderlearn/theheaderlearn";
 import { verb } from "../../../components/util/glag";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
 

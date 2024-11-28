@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { TheHeaderLearn } from "@/components/theheaderlearn/theheaderlearn";
 import { teamm } from "../../../components/util/fraz";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
 

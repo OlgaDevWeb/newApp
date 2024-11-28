@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Speak from "../speak/speak";
 import styles from "./cardсall.module.css";
 import Link from "next/link";
@@ -16,10 +16,6 @@ type Tprops = {
 };
 
 const Cardсall = ({ rus, port, verb, user, auth, min }: Tprops) => {
-  const [okadd, setOkAdd] = useState(false);
-  const [okdell, setOkDell] = useState(false);
-  const [err, seterr] = useState(false);
-
   return (
     <div className={styles.mainbox}>
       <div className={styles.front}>

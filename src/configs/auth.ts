@@ -1,8 +1,6 @@
 import { NextAuthOptions, User } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
-//import { users } from "../../public/users";
-import { pages } from "next/dist/build/templates/app-page";
 import { prisma } from "@/lib/prisma";
 
 function getAllUser(email: string) {

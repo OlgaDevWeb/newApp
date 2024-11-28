@@ -8,14 +8,6 @@ import { ExitButton } from "@/components/exitbutton/exitbutton";
 export default async function Page() {
   const session = await getServerSession(authOptions);
 
-  let userID = "";
-  let auth = false;
-  if (session) {
-    if (session.user?.email) {
-      userID = session.user?.email;
-      auth = true;
-    }
-  }
   return (
     <div className={styles.main}>
       <TheHeaderMov name={""} team="" link="/"></TheHeaderMov>

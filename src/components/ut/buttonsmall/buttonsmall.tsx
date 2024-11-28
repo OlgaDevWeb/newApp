@@ -1,5 +1,5 @@
+import Image from "next/image";
 import styles from "./buttonsmall.module.css";
-import exit from "../../images/exit.png";
 
 type TButton = {
   func: () => void;
@@ -17,10 +17,12 @@ function Buttonsmall(props: TButton) {
         borderRadius: `${props.size}px`,
       }}
     >
-      <img
+      <Image
         className={styles.icon}
         src={props.img}
         alt="button"
+        width={props.size}
+        height={props.size}
         style={{
           width: `${props.size}px`,
           height: `${props.size}px`,

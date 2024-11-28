@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Speak from "../speak/speak";
 import styles from "./play.module.css";
 import { useEffect, useState } from "react";
 import SimpleCH from "../slaiderch/slaiderch";

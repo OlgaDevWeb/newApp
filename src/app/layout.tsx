@@ -5,20 +5,8 @@ import "./globals.css";
 import { TheHeader } from "@/components/theheader/theheader";
 import { TheFooter } from "@/components/thefooter/thefooter";
 import { Providers } from "@/components/providers";
-import Link from "next/link";
 
 const raleway = Raleway({ subsets: ["cyrillic", "latin"] });
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Учим европейский португальский",

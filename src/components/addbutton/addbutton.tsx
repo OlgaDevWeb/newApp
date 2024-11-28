@@ -1,6 +1,5 @@
 "use client";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+
 import { addWord } from "../cardсall/action";
 import { useEffect, useState } from "react";
 import styles from "./addbutton.module.css";
@@ -33,7 +32,7 @@ const AddButton = ({ rus, port, user }: Tprops) => {
     }
   }, [ok]);
 
-  const hendlerClick = (evt: any) => {
+  const hendlerClick = () => {
     setOk(false);
   };
 

@@ -1,8 +1,6 @@
 "use client";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
-import { addWord, delWord } from "../cardсall/action";
-import { useEffect, useState } from "react";
+
+import { delWord } from "../cardсall/action";
 
 type Tprops = {
   rus: string;
@@ -10,7 +8,7 @@ type Tprops = {
   user: string;
 };
 
-const DellButton = ({ rus, port, user }: Tprops) => {
+const DellButton = ({ rus }: Tprops) => {
   return (
     <button
       style={{
@@ -21,7 +19,7 @@ const DellButton = ({ rus, port, user }: Tprops) => {
         width: 40,
         height: 40,
       }}
-      onClick={() => delWord(rus, port, user)}
+      onClick={() => delWord(rus)}
     >
       -
     </button>

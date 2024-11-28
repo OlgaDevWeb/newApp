@@ -2,14 +2,11 @@
 
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { FormEventHandler, useState } from "react";
-import Modal from "../ut/modal/modal";
-import InputText from "../ut/inputеxt/inputеxt";
+import { FormEventHandler } from "react";
 import Link from "next/link";
 
 const SignInForm = () => {
   const router = useRouter();
-  const [name, setname] = useState("name");
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
@@ -22,7 +19,6 @@ const SignInForm = () => {
     if (res && !res.error) {
       router.push("/profile");
     } else {
-      console.log(res);
     }
   };
 

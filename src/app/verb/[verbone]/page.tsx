@@ -1,8 +1,5 @@
 import styles from "./page.module.css";
-import Azul from "@/components/azul/azul";
-import Link from "next/link";
 import Cardсall from "@/components/cardсall/cardсall";
-import { verb } from "../../../components/util/glag";
 import { verboall } from "../../../components/util/glag";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/configs/auth";

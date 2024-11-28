@@ -1,7 +1,6 @@
 "use client";
 import { Dispatch, SetStateAction } from "react";
-import { useEffect, useState } from "react";
-import Speak from "../speak/speak";
+import { useState } from "react";
 import styles from "./card.module.css";
 import { conv } from "../util/convert";
 import Image from "next/image";

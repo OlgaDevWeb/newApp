@@ -1,7 +1,6 @@
 import { getServerSession } from "next-auth";
 import styles from "./page.module.css";
 import { authOptions } from "@/configs/auth";
-import Image from "next/image";
 import { getAllwords } from "./actions";
 import Cardсall from "@/components/cardсall/cardсall";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
@@ -44,5 +43,3 @@ export default async function Page() {
     </div>
   );
 }
-
-//{session?.user?.image && <image src={session.user.image} alt="photo" />}

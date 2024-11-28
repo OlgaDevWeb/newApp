@@ -5,13 +5,6 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { revalidatePath } from "next/cache";
 
-/*function getUser(email: string) {
-  return prisma.user.findUnique({
-    where: {
-      email,
-    },
-  });
-}*/
 async function getUser() {
   const session = await getServerSession(authOptions);
 
@@ -24,7 +17,7 @@ async function getUser() {
   return null;
 }
 
-export async function checkWord(rus: string, port: string, user: string) {
+export async function checkWord(rus: string, port: string) {
   const userall = await getUser();
   let authorId = "n";
 
@@ -43,7 +36,7 @@ export async function checkWord(rus: string, port: string, user: string) {
   }
 }
 
-export async function addWord(rus: string, port: string, user: string) {
+export async function addWord(rus: string, port: string) {
   const userall = await getUser();
 
   let authorId = "n";
@@ -85,7 +78,7 @@ export async function addWord(rus: string, port: string, user: string) {
   }
 }
 
-export async function delWord(rus: string, port: string, user: string) {
+export async function delWord(rus: string) {
   const userall = await getUser();
   let authorId = "n";
   let id = "";
@@ -93,7 +86,7 @@ export async function delWord(rus: string, port: string, user: string) {
   if (userall !== null) {
     authorId = userall;
     const list = await prisma.word.findMany({ where: { authorId } });
-    list.map((item, index) => {
+    list.map((item) => {
       if (item.rus === rus && item.port) {
         id = item.id;
       }

@@ -1,7 +1,4 @@
 import styles from "./arrowrun.module.css";
-import icon from " /ran.png";
-import icona from "../../images/rana.png";
-import Link from "next/link";
 import Image from "next/image";
 
 type TButton = {

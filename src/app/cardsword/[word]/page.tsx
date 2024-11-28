@@ -1,7 +1,6 @@
 import { tems } from "../../../components/util/team";
 import { slova } from "../../../components/util/slova";
 import styles from "./page.module.css";
-import Azul from "@/components/azul/azul";
 import Link from "next/link";
 import Cardсall from "@/components/cardсall/cardсall";
 import { getServerSession } from "next-auth";
@@ -26,7 +25,7 @@ export default async function Word({ params }: Props) {
     }
   }
 
-  let nom = teamw[1];
+  const nom = teamw[1];
 
   let slovo = "Местоимения";
 

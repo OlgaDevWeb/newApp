@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import styles from "./navlink.module.css";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
-import ButtonRode from "../ut/buttonrode/buttonrode";
 
 type Tprops = {
   links: {

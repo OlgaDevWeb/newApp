@@ -1,6 +1,4 @@
 import styles from "./page.module.css";
-import Azul from "@/components/azul/azul";
-import Link from "next/link";
 import Cardсall from "@/components/cardсall/cardсall";
 import { teamm } from "../../../components/util/fraz";
 import { getServerSession } from "next-auth";
@@ -41,6 +39,7 @@ export default async function Page({ params }: Props) {
                 verb={false}
                 user={userID}
                 auth={auth}
+                min={false}
               ></Cardсall>
             </div>
           );

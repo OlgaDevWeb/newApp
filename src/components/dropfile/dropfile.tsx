@@ -11,32 +11,35 @@ type Tprops = {
 const ExcelUploader = ({ userId }: Tprops) => {
   const [list, setList] = useState<{ port: string; rus: string }[]>();
   const [name, setName] = useState("Выберите файл");
-  const handleFileUpload = (event: any) => {
-    const file = event.target.files[0];
 
-    if (file) {
-      const reader = new FileReader();
-      setName(`Вы выбрали : ${file.name}`);
-      reader.onload = (e) => {
-        const binaryStr = e.target?.result;
-        const workbook = XLSX.read(binaryStr, { type: "binary" });
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const file = event.target.files[0];
 
-        // Выбираем первую страницу (лист)
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
+      if (file) {
+        const reader = new FileReader();
+        setName(`Вы выбрали : ${file.name}`);
+        reader.onload = (e) => {
+          const binaryStr = e.target?.result;
+          const workbook = XLSX.read(binaryStr, { type: "binary" });
 
-        // Преобразуем лист в массив JSON
-        const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-        //setData(jsonData);
-        setList(addList(jsonData));
-        console.log(jsonData); // Для проверки данных
-      };
-      reader.readAsArrayBuffer(file);
+          // Выбираем первую страницу (лист)
+          const sheetName = workbook.SheetNames[0];
+          const sheet = workbook.Sheets[sheetName];
+
+          // Преобразуем лист в массив JSON
+          const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+          //setData(jsonData);
+          setList(addList(jsonData));
+          console.log(jsonData); // Для проверки данных
+        };
+        reader.readAsArrayBuffer(file);
+      }
     }
   };
 
   const addList = (data: unknown[]) => {
-    let result = [{ port: "португальский", rus: "русский" }];
+    const result = [{ port: "португальский", rus: "русский" }];
     if (data) {
       const list = data.map((item) => {
         if (Array.isArray(item) && item.length === 2) {

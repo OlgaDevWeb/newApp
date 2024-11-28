@@ -13,7 +13,7 @@ export default async function Team({ params }: Props) {
 
   const result = tems.filter((word) => word.sach === team);
   let list = tems[0].nom;
-  let stt = team;
+  const stt = team;
   if (result) {
     list = result[0].nom;
   }

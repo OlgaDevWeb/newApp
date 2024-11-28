@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./theheader.module.css";
 import NavLinks from "../navlink/navlink";
 
