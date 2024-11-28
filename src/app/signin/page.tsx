@@ -1,6 +1,6 @@
 import { GoogleButton } from "@/components/googlebutton/googlebutton";
 import { SignInForm } from "@/components/signinform/signinform";
-import Modal from "@/components/ut/modal/modal";
+//import Modal from "@/components/ut/modal/modal";
 import styles from "./page.module.css";
 
 export default async function Signin() {
