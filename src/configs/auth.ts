@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
         //const users = await getAllUser();
         const currentUser = await getAllUser(credentials.email);
         if (currentUser && currentUser.name === credentials.password) {
-          const { name, ...userWithoutPass } = currentUser;
+          const { ...userWithoutPass } = currentUser;
           return userWithoutPass as User;
         }
         return null;

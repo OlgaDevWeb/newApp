@@ -32,7 +32,6 @@ export async function checkWord(rus: string, port: string) {
     } else {
       return true;
     }
-    return false;
   }
 }
 
@@ -55,7 +54,7 @@ export async function addWord(rus: string, port: string) {
       };
     } else {
       if (list.length < 100) {
-        const word = await prisma.word.create({
+        await prisma.word.create({
           data: {
             rus,
             port,

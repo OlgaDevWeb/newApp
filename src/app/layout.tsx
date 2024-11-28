@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { TheHeader } from "@/components/theheader/theheader";

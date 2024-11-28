@@ -15,7 +15,7 @@ async function getUser() {
   return null;
 }
 
-export async function getAllwords(authorIdn: string) {
+export async function getAllwords() {
   const userall = await getUser();
   let authorId = "n";
   if (userall !== null) {

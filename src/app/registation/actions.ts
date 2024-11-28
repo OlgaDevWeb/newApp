@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma";
 
 export async function createUser(data: FormData) {
   const { name, email } = Object.fromEntries(data) as Omit<User, "id">;
-  const user = await prisma.user.create({
+  await prisma.user.create({
     data: {
       name,
       email,

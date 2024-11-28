@@ -28,10 +28,6 @@ export default async function Layout({
   }
 
   const resultlist = slova.filter((item) => item.name === slovo);
-  let list = slova[0].dict;
-  if (resultlist[0]) {
-    list = resultlist[0].dict;
-  }
 
   return (
     <div>

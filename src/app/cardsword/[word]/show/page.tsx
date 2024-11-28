@@ -1,8 +1,6 @@
 import { tems } from "@/components/util/team";
 import { slova } from "@/components/util/slova";
 import styles from "./page.module.css";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/configs/auth";
 import { shuffleArray } from "@/components/util/utils";
 import Play from "@/components/play/play";
 

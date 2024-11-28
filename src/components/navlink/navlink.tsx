@@ -6,14 +6,7 @@ import styles from "./navlink.module.css";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 
-type Tprops = {
-  links: {
-    name: string;
-    link: string;
-  }[];
-};
-
-export default function NavLinks({ links }: Tprops) {
+export default function NavLinks() {
   const pathname = usePathname();
   const session = useSession();
 
