@@ -18,7 +18,7 @@ const AddButton = ({ rus, port, user }: Tprops) => {
   const [ok, setOk] = useState(false);
 
   const handleclick = async (rus: string, port: string, user: string) => {
-    const ok = await addWord(rus, port, user);
+    const ok = await addWord(rus, port);
     setResponse(ok);
     setOk(true);
   };
