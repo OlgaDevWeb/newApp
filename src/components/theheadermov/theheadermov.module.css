@@ -1,0 +1,80 @@
+.main {
+  margin: 0;
+  padding: 10px;
+  padding-left: 80px;
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background);
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+.link {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  justify-self: start;
+  font-size: 15px;
+}
+.text {
+  margin: auto;
+  padding: 0;
+  color: var(--front);
+  font-size: 15px;
+  font-weight: 900;
+}
+.box {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+}
+
+.img {
+  margin: 0;
+  padding: 0;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  box-shadow: 2px 2px 8px gray;
+}
+
+@media screen and (max-width: 700px) {
+  .img {
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    box-shadow: 2px 2px 8px gray;
+  }
+  .text {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .box {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .text {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .link {
+    font-size: 10px;
+  }
+}

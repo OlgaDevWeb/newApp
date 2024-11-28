@@ -1,0 +1,73 @@
+.main {
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+
+.userBox {
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  padding: 12px 8px 12px 10px;
+  width: 100%;
+  font-family: "Karina", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  font-size: 18px;
+  height: 48px;
+  background-color: rgb(232, 237, 240);
+  border-style: none;
+  box-sizing: border-box;
+  color: #a48ba8;
+  border-bottom: 1px #a48ba8 solid;
+  z-index: -2;
+}
+
+.userBox:focus {
+  outline: none !important;
+  border-bottom: 1px #342b35 solid;
+}
+
+.label {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  margin-left: 10px;
+  padding: 12px 8px 12px 0px;
+  background-color: transparent;
+  z-index: 10;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-family: "Karina", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  font-size: 15px;
+  z-index: 0;
+}
+
+.error {
+  width: 100%;
+  padding: 0;
+  margin: 1px;
+  background-color: transparent;
+  font-family: "Karina", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  font-size: 10px;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin: 3px;
+}

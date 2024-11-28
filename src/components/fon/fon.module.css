@@ -1,0 +1,40 @@
+.main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-decoration: none;
+  color: var(--front);
+  box-sizing: border-box;
+}
+.main:hover {
+  scale: 1.05;
+  color: var(--frontact);
+}
+
+.logo {
+  border-radius: 50px;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  height: 250px;
+  filter: grayscale(80%);
+}
+
+.logo:hover {
+  filter: none;
+}
+.name {
+  margin: 0;
+  padding: 15px;
+  background-color: burlywood;
+
+  border: 3px olivedrab;
+  color: var(--front);
+  border-radius: 50px;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+}

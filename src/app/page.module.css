@@ -1,0 +1,43 @@
+.page {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 80px;
+  padding-top: 80px;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--background);
+}
+
+.main {
+  margin: 20px;
+  padding: 20px;
+  width: 90%;
+  min-height: 90vh;
+  color: var(--front);
+  max-width: 1200px;
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 270px);
+}
+.item {
+  margin: 10px;
+  animation-name: show;
+  animation-fill-mode: both;
+  view-timeline-name: --reveal;
+  animation-timeline: --reveal;
+  animation-range: entry 30% cover 50%;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+.title {
+  margin: 30px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  overflow: hidden;
+  border-radius: 80px;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+.circle {
+  display: block;
+  overflow: visible;
+  width: 70px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 3px;
+  fill: rgb(223, 90, 13);
+}
+
+.circle path {
+  fill: none;
+}

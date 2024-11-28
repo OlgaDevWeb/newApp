@@ -1,0 +1,13 @@
+.main {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--background);
+}

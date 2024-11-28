@@ -1,0 +1,44 @@
+.main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(177, 176, 176);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  background-color: rgb(177, 176, 176);
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 280px);
+}
+.link {
+  text-decoration: none;
+  color: var(--front);
+}
+.item {
+  margin: 10px;
+  animation-name: show;
+  animation-fill-mode: both;
+  view-timeline-name: --reveal;
+  animation-timeline: --reveal;
+  animation-range: entry 50% cover 50%;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
