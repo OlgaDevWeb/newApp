@@ -5,9 +5,9 @@ import { shuffleArray } from "@/components/util/utils";
 import Play from "@/components/play/play";
 
 type Props = {
-  params: {
+  params: Promise<{
     word: string;
-  };
+  }>;
 };
 export default async function Page({ params }: Props) {
   const { word } = await params;
