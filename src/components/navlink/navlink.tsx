@@ -28,21 +28,3 @@ export default function NavLinks() {
     </div>
   );
 }
-
-/*className={clsx(`${styles.activenot}`, {
-  "`${styles.activenot}`": pathname === link,
-})}*/
-/*{links.map((item, index) => {
-  return (
-    <Link
-      key={item.name}
-      href={item.link}
-      className={clsx(`${styles.activenot}`, {
-        [`${styles.active}`]: pathname === item.link,
-        [`${styles.activen}`]: pathname !== item.link,
-      })}
-    >
-      {item.name}
-    </Link>
-  );
-})}*/
