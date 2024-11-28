@@ -4,11 +4,12 @@ import Azul from "@/components/azul/azul";
 import Link from "next/link";
 
 type Props = {
-  params: {
+  params: Promise<{
     team: string;
-  };
+  }>;
 };
-export default async function Team({ params: { team } }: Props) {
+export default async function Team({ params }: Props) {
+  const { team } = await params;
   const result = tems.filter((word) => word.sach === team);
   let list = tems[0].nom;
   const stt = team;

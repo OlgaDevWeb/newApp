@@ -7,11 +7,12 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/configs/auth";
 
 type Props = {
-  params: {
+  params: Promise<{
     word: string;
-  };
+  }>;
 };
-export default async function Word({ params: { word } }: Props) {
+export default async function Word({ params }: Props) {
+  const { word } = await params;
   const teamw = word.split("_");
   const result = tems.filter((word) => word.sach === teamw[0]);
   const session = await getServerSession(authOptions);

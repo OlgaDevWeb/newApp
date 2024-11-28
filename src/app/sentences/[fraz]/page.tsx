@@ -4,11 +4,12 @@ import { teamm } from "../../../components/util/fraz";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/configs/auth";
 type Props = {
-  params: {
+  params: Promise<{
     fraz: string;
-  };
+  }>;
 };
-export default async function Page({ params: { fraz } }: Props) {
+export default async function Page({ params }: Props) {
+  const { fraz } = await params;
   let list = teamm[0].list;
   const result = teamm.filter((word) => word.sach === fraz);
 
