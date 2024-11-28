@@ -10,14 +10,14 @@ type Tprops = {
   user: string;
 };
 
-const AddButton = ({ rus, port, user }: Tprops) => {
+const AddButton = ({ rus, port }: Tprops) => {
   const [response, setResponse] = useState<{
     success: boolean;
     message: string;
   } | null>(null);
   const [ok, setOk] = useState(false);
 
-  const handleclick = async (rus: string, port: string, user: string) => {
+  const handleclick = async (rus: string, port: string) => {
     const ok = await addWord(rus, port);
     setResponse(ok);
     setOk(true);
@@ -47,7 +47,7 @@ const AddButton = ({ rus, port, user }: Tprops) => {
           width: 40,
           height: 40,
         }}
-        onClick={() => handleclick(rus, port, user)}
+        onClick={() => handleclick(rus, port)}
       >
         +
       </button>
