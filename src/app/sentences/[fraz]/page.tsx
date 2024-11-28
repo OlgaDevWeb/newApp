@@ -8,8 +8,7 @@ type Props = {
     fraz: string;
   };
 };
-export default async function Page({ params }: Props) {
-  const { fraz } = await params;
+export default async function Page({ params: { fraz } }: Props) {
   let list = teamm[0].list;
   const result = teamm.filter((word) => word.sach === fraz);
 

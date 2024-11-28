@@ -8,9 +8,7 @@ type Props = {
     team: string;
   };
 };
-export default async function Team({ params }: Props) {
-  const { team } = await params;
-
+export default async function Team({ params: { team } }: Props) {
   const result = tems.filter((word) => word.sach === team);
   let list = tems[0].nom;
   const stt = team;

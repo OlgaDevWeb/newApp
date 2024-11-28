@@ -11,8 +11,7 @@ type Props = {
     word: string;
   };
 };
-export default async function Word({ params }: Props) {
-  const { word } = await params;
+export default async function Word({ params: { word } }: Props) {
   const teamw = word.split("_");
   const result = tems.filter((word) => word.sach === teamw[0]);
   const session = await getServerSession(authOptions);

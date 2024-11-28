@@ -8,8 +8,7 @@ type Props = {
     verbone: string;
   };
 };
-export default async function Page({ params }: Props) {
-  const { verbone } = await params;
+export default async function Page({ params: { verbone } }: Props) {
   const listnom = verbone.split("_");
   const nom = Number(listnom[1]);
   const list = verboall.slice(nom - 50, nom);
