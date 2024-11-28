@@ -16,7 +16,7 @@ export default async function Page() {
       auth = true;
     }
   }
-  const list = await getAllwords(userID);
+  const list = await getAllwords();
   return (
     <div className={styles.main}>
       <TheHeaderMov
