@@ -10,7 +10,7 @@ export const TheHeader = () => {
   ];
   return (
     <header className={styles.main}>
-      <NavLinks links={links}></NavLinks>
+      <NavLinks></NavLinks>
     </header>
   );
 };
