@@ -2,10 +2,14 @@
 
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { FormEventHandler } from "react";
+import { Dispatch, FormEventHandler, SetStateAction } from "react";
 import Link from "next/link";
 
-const SignInForm = () => {
+type Tprops = {
+  act: Dispatch<SetStateAction<boolean>>;
+};
+
+const SignInForm = ({ act }: Tprops) => {
   const router = useRouter();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
@@ -31,8 +35,18 @@ const SignInForm = () => {
 
       <button type="submit">Войти</button>
       <p className="textbold">Еще не зарегистрированы?</p>
-      <Link href={"/registation"}>Регистрация</Link>
+      <button onClick={() => act(false)}>Регистрация</button>
     </form>
   );
 };
 export { SignInForm };
+/*<form onSubmit={handleSubmit} className="mainf">
+      <p className="textbold">e-mail:</p>
+      <input type="email" name="email" required />
+      <p className="textbold">пароль:</p>
+      <input type="password" name="name" required />
+
+      <button type="submit">Войти</button>
+      <p className="textbold">Еще не зарегистрированы?</p>
+      <Link href={"/reg"}>Регистрация</Link>
+    </form>*/

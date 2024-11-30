@@ -16,15 +16,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  auth,
 }: Readonly<{
   children: React.ReactNode;
+  auth: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.className}  page`}>
+      <body className={`${raleway.className} `}>
         <Providers>
           <TheHeader></TheHeader>
-          <>{children}</>
+          {auth}
+          {children}
+          <div id="modal-root" />
           <TheFooter></TheFooter>
         </Providers>
       </body>

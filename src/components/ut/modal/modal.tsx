@@ -1,38 +1,29 @@
 "use client";
-import React, { ReactNode } from "react";
 import styles from "./modal.module.css";
-import { createPortal } from "react-dom";
-import ModalOverlay from "../modaloverlay/modaloverlay";
-import Buttonsmall from "../buttonsmall/buttonsmall";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-type TModalprops = {
-  children: ReactNode;
-};
-
-function Modal(props: TModalprops) {
+export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  return createPortal(
-    <>
-      <div className={styles.modal}>
-        <div className={styles.closeIcon}>
-          <Buttonsmall
-            func={() => {
-              router.back();
-            }}
-            size={30}
-            img={"/clouse.png"}
-          ></Buttonsmall>
-        </div>
-        {props.children}
+  return (
+    <div className={styles.main}>
+      <div className={styles.box}>
+        <button
+          className={styles.closeIcon}
+          onClick={() => {
+            router.back();
+          }}
+        >
+          <Image
+            src={"/clouse.png"}
+            alt="Portugal"
+            width={20}
+            height={20}
+            priority
+          />
+        </button>
+        {children}
       </div>
-      <ModalOverlay
-        onClose={() => {
-          router.back();
-        }}
-      />
-    </>,
-    document.body
+    </div>
   );
 }
-export default Modal;

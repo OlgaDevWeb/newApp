@@ -24,6 +24,7 @@ const speak = (name: string, rate: number) => {
 const Card = ({ rus, port, calc, ok }: Tprops) => {
   const [yes, setYes] = useState(false);
   const [no, setNo] = useState(false);
+
   return (
     <div className={styles.mainbox}>
       <div className={styles.box}>
