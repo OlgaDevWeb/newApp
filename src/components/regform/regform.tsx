@@ -1,6 +1,5 @@
 "use client";
 import { createUser } from "@/app/reg/actions";
-import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
 
 type Tprops = {

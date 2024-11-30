@@ -3,7 +3,6 @@
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Dispatch, FormEventHandler, SetStateAction } from "react";
-import Link from "next/link";
 
 type Tprops = {
   act: Dispatch<SetStateAction<boolean>>;
