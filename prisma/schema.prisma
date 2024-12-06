@@ -30,3 +30,46 @@ model Post {
   body     String
   authorId String
 }
+
+model Words {
+  id   String @id @default(cuid())
+  name String
+  rus  String
+  port String
+  idt  String
+}
+
+model Fraz {
+  id   String @id @default(cuid())
+  rus  String
+  port String
+  idt  String
+}
+
+model Verb {
+  id   String @id @default(cuid())
+  rus  String
+  port String
+  idt  String
+}
+
+model Teams {
+  id   String @id @default(cuid())
+  name String
+  idh  String
+}
+
+model TeamsHigh {
+  id   String @id @default(cuid())
+  name String
+}
+
+model TeamsFraz {
+  id   String @id @default(cuid())
+  name String
+}
+
+model TeamsVerb {
+  id   String @id @default(cuid())
+  name String
+}

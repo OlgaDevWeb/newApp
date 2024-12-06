@@ -76,24 +76,23 @@ const ExcelUploader = ({ userId }: Tprops) => {
       <label htmlFor="inp" className={styles.custominp}>
         {name}
       </label>
-      <div>
-        <h3>Ваши слова:</h3>
-        <div className={styles.list}>
-          {list?.map((item, index) => {
-            return (
-              <div key={index} className={styles.item}>
-                <Cardсall
-                  rus={item.rus}
-                  port={item.port}
-                  verb={false}
-                  user={userId}
-                  auth={true}
-                  min={false}
-                ></Cardсall>
-              </div>
-            );
-          })}
-        </div>
+
+      <h3>Ваши слова:</h3>
+      <div className={styles.list}>
+        {list?.map((item, index) => {
+          return (
+            <div key={index} className={styles.item}>
+              <Cardсall
+                rus={item.rus}
+                port={item.port}
+                verb={false}
+                user={userId}
+                auth={true}
+                min={false}
+              ></Cardсall>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

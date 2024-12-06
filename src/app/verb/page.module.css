@@ -1,15 +1,3 @@
-.main {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 20px;
-  display: flex;
-  min-height: calc(90vh - 200px);
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: rgb(177, 176, 176);
-}
-
 .list {
   margin: 0;
   padding: 0;

@@ -1,27 +1,16 @@
-.page {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 80px;
-  padding-top: 80px;
-  min-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: var(--background);
-}
-
 .main {
-  margin: 20px;
-  padding: 20px;
+  margin: auto;
+  padding: 0px;
+  padding-bottom: 80px;
   width: 90%;
   min-height: 90vh;
   color: var(--front);
   max-width: 1200px;
   display: grid;
-  align-items: flex-start;
+  gap: 20px;
+  align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 270px);
+  grid-template-columns: repeat(auto-fill, 320px);
 }
 .item {
   margin: 10px;
@@ -31,6 +20,40 @@
   animation-timeline: --reveal;
   animation-range: entry 30% cover 50%;
 }
+.tit {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.name {
+  background-color: var(--maincolor);
+  padding: 10px;
+  width: 200px;
+  border-radius: 40px;
+  text-align: center;
+  border: 7px rgb(179, 163, 115) solid;
+  box-shadow: 2px 2px 6px 2px rgb(156, 156, 156);
+  position: absolute;
+  bottom: -20px;
+  left: 48px;
+}
+
+.logo {
+  border-radius: 250px;
+  margin: auto;
+  padding: 10px;
+  width: 250px;
+  height: 250px;
+  background-color: var(--maincolor);
+  border: 7px rgb(179, 163, 115) solid;
+  box-shadow: 2px 2px 6px 2px rgb(156, 156, 156);
+}
+
 @keyframes show {
   from {
     opacity: 0;

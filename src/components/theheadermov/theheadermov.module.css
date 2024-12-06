@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--background);
+  background-color: rgba(248, 224, 159, 0.8);
   position: sticky;
   z-index: 2;
   top: 0;
@@ -17,7 +17,7 @@
 .link {
   margin: 0;
   padding: 0;
-  padding-left: 10px;
+  padding-left: 0px;
   justify-self: start;
   font-size: 15px;
 }
@@ -37,10 +37,13 @@
 .logo {
   margin: 0;
   padding: 0;
+  border-radius: 100px;
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 20;
+  border: 7px rgb(179, 163, 115) solid;
+  box-shadow: 2px 2px 6px 2px rgb(156, 156, 156);
 }
 
 .img {

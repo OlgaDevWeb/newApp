@@ -12,7 +12,7 @@ type Tprops = {
 const Play = ({ list }: Tprops) => {
   let nom = list.length;
   let i = 11;
-  console.log(list.length);
+
   const listlist = [list.slice(0, 10)];
   const playlist = [
     {
@@ -49,7 +49,11 @@ const Play = ({ list }: Tprops) => {
         setFraz(`Опознано ${ok} слов `);
       }
     }
+    if (ok === 1) {
+      setFraz(`Опознано ${ok} слово `);
+    }
   }, [ok]);
+
   return (
     <div className={styles.main}>
       <div className={styles.list}>

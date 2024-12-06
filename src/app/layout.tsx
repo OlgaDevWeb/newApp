@@ -23,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} `}>
+      <body
+        className={`${raleway.className} `}
+        style={{
+          backgroundImage: 'url("/fon.png")',
+        }}
+      >
         <Providers>
           <TheHeader></TheHeader>
           {auth}

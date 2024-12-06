@@ -24,7 +24,7 @@ const speak = (name: string, rate: number) => {
 const Card = ({ rus, port, calc, ok }: Tprops) => {
   const [yes, setYes] = useState(false);
   const [no, setNo] = useState(false);
-
+  const [ja, setJa] = useState(false);
   return (
     <div className={styles.mainbox}>
       <div className={styles.box}>
@@ -42,7 +42,10 @@ const Card = ({ rus, port, calc, ok }: Tprops) => {
           onClick={() => {
             setYes(true);
             setNo(false);
-            calc(ok + 1);
+            setJa(true);
+            if (!ja) {
+              calc(ok + 1);
+            }
           }}
         />
         <Image
@@ -55,6 +58,7 @@ const Card = ({ rus, port, calc, ok }: Tprops) => {
           onClick={() => {
             setNo(true);
             setYes(false);
+            setJa(true);
             speak(conv(port), 0.8);
           }}
         />

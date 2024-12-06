@@ -1,11 +1,17 @@
 .main {
-  margin: 0;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 80px;
   padding: 0;
-  padding-bottom: 60px;
-  min-height: 90vh;
+  width: 90%;
+  max-width: 1200px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: rgb(177, 176, 176);
+  background-color: var(--maincolor);
+  border-radius: 40px;
+  border: 7px rgb(179, 163, 115) solid;
+  box-shadow: 2px 2px 6px 2px rgb(156, 156, 156);
 }

@@ -18,7 +18,7 @@ export default async function Page() {
   }
   const list = await getAllwords();
   return (
-    <div className={styles.main}>
+    <div style={{ minHeight: "100vh" }}>
       <TheHeaderMov
         name={"Мой список слов"}
         team=""

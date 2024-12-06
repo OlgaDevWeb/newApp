@@ -1,8 +1,8 @@
 import styles from "./page.module.css";
 import Cardсall from "@/components/cardсall/cardсall";
-import { verboall } from "../../../components/util/glag";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/configs/auth";
+import { getWords } from "../action";
 type Props = {
   params: Promise<{
     verbone: string;
@@ -10,9 +10,7 @@ type Props = {
 };
 export default async function Page({ params }: Props) {
   const { verbone } = await params;
-  const listnom = verbone.split("_");
-  const nom = Number(listnom[1]);
-  const list = verboall.slice(nom - 50, nom);
+
   const session = await getServerSession(authOptions);
   let userID = "";
   let auth = false;
@@ -22,24 +20,36 @@ export default async function Page({ params }: Props) {
       auth = true;
     }
   }
-  return (
-    <div className={styles.main}>
-      <div className={styles.list}>
-        {list.map((item, index) => {
-          return (
-            <div key={index} className={styles.item}>
-              <Cardсall
-                rus={item.rus}
-                port={item.port}
-                verb={true}
-                user={userID}
-                auth={auth}
-                min={false}
-              ></Cardсall>
-            </div>
-          );
-        })}
+
+  const resultlist = await getWords(verbone);
+  if (resultlist.list) {
+    const list = resultlist.list;
+
+    return (
+      <div>
+        <div className={styles.list}>
+          {list.map((item, index) => {
+            return (
+              <div key={index} className={styles.item}>
+                <Cardсall
+                  rus={item.rus}
+                  port={item.port}
+                  verb={true}
+                  user={userID}
+                  auth={auth}
+                  min={false}
+                ></Cardсall>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className={styles.main}>
+        <p>что-то не так</p>
+      </div>
+    );
+  }
 }

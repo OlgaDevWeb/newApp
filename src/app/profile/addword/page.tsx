@@ -16,14 +16,15 @@ export default async function Page() {
     }
   }
   return (
-    <div className={styles.main}>
+    <div style={{ minHeight: "100vh" }}>
       <TheHeaderMov name={" "} team="" link="/profile"></TheHeaderMov>
-      <div className={styles.list}>
+      <div className={styles.main}>
         <Link href={"/profile/addword"}>
           <h2> Загрузить слова из файла xlsx</h2>
         </Link>
-      </div>
+    
       <ExcelUploader userId={userID}></ExcelUploader>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { tems } from "../../../components/util/team";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
+import { getTemsH } from "./action";
 
 export const metadata: Metadata = {
   title: "Учим европейский португальский",
@@ -13,16 +13,14 @@ export default async function Layout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ team: string; word: string }>;
+  params: Promise<{ team: string }>;
 }>) {
   let name = "";
   const { team } = await params;
-
-  const result = tems.filter((word) => word.sach === team);
-  if (result) {
-    name = result[0].name;
+  const result = await getTemsH(team);
+  if (result.list) {
+    name = result.list[0].name;
   }
-
   return (
     <div>
       <TheHeaderMov name={""} team={name} link={"/words"}></TheHeaderMov>

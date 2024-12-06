@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { teamm } from "../../../components/util/fraz";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
+import { getTem } from "../action";
 
 export const metadata: Metadata = {
   title: "Учим европейский португальский",
@@ -15,12 +16,13 @@ export default async function Layout({
   children: React.ReactNode;
   params: Promise<{ fraz: string }>;
 }>) {
-  let name = "";
   const { fraz } = await params;
 
-  const result = teamm.filter((word) => word.sach === fraz);
-  if (result) {
-    name = result[0].name;
+  const resultlist = await getTem(fraz);
+  let name = "";
+
+  if (resultlist.name) {
+    name = resultlist.name;
   }
 
   return (

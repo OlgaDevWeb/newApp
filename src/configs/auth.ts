@@ -30,6 +30,7 @@ export const authOptions: NextAuthOptions = {
           const { ...userWithoutPass } = currentUser;
           return userWithoutPass as User;
         }
+
         return null;
       },
     }),

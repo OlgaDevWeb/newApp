@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { tems } from "../../../components/util/team";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
-import { slova } from "../../../components/util/slova";
+import { getTems } from "./action";
 export const metadata: Metadata = {
   title: "Учим европейский португальский",
   description:
@@ -17,25 +16,17 @@ export default async function Layout({
 }>) {
   const { word } = await params;
 
-  const teamw = word.split("_");
-  const result = tems.filter((word) => word.sach === teamw[0]);
-  const nom = teamw[1];
-  let slovo = "Местоимения";
-
-  if (result && Number(nom)) {
-    const listt = result[0].nom;
-    slovo = listt[Number(nom)];
+  const resultlist = await getTems(word);
+  let name = "";
+  let idh = "";
+  if (resultlist.name) {
+    name = resultlist.name;
+    idh = resultlist.idh;
   }
-
-  const resultlist = slova.filter((item) => item.name === slovo);
 
   return (
     <div>
-      <TheHeaderMov
-        name={"Карточки по теме:"}
-        team={resultlist[0].name}
-        link={`/words/${result[0].sach}`}
-      ></TheHeaderMov>
+      <TheHeaderMov name={""} team={name} link={`/words/${idh}`}></TheHeaderMov>
       <>{children}</>
     </div>
   );

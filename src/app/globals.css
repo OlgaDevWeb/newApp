@@ -1,10 +1,16 @@
 :root {
   --background: rgb(173, 213, 214);
+  --maincolor: rgba(248, 224, 159, 0.8);
   --main: rgb(177, 176, 176);
   --front: rgb(6, 67, 68);
   --frontact: rgb(224, 98, 29);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a {
@@ -31,7 +37,7 @@ button {
   color: rgb(6, 67, 68);
   font-weight: 900;
   font-size: 15px;
-  background-color: #07dbd1;
+  background-color: rgb(105, 175, 133);
   border-radius: 30px;
   border-width: 0;
   box-shadow: 2px 2px 5px grey;
@@ -93,13 +99,24 @@ input:focus {
 
 .main {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   min-height: 90vh;
-  background-color: var(--background);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+.mainapp {
+  margin: 0;
+  padding: 0;
+
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-size: 30%;
+  background-repeat: repeat;
 }
 
 .mainf {
@@ -128,11 +145,18 @@ input:focus {
 }
 
 .textbold {
-  margin: 10px;
+  margin: 5px;
   padding: 0;
   color: rgb(6, 67, 68);
   font-weight: 900;
   font-size: 15px;
+}
+.error {
+  margin: 5px;
+  padding: 0;
+  color: red;
+  font-weight: 400;
+  font-size: 10px;
 }
 .modal-backdrop {
   position: absolute;
@@ -147,10 +171,23 @@ input:focus {
   z-index: 1000;
 }
 
+.list {
+  margin: auto;
+  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 80px;
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 260px);
+}
+
 .modal {
   width: 80%;
   max-width: 320px;
-  height: 650px;
+  height: 200px;
   border: none;
   border-radius: 20px;
   background-color: var(--background);
@@ -188,6 +225,22 @@ input:focus {
 .close-button:after {
   content: "x";
   color: black;
+}
+
+.box {
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--maincolor);
+  border-radius: 40px;
+  border: 7px rgb(179, 163, 115) solid;
+  box-shadow: 2px 2px 6px 2px rgb(156, 156, 156);
 }
 
 @media screen and (max-width: 700px) {

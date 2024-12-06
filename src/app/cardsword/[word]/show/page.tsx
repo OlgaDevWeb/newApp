@@ -1,8 +1,6 @@
-import { tems } from "@/components/util/team";
-import { slova } from "@/components/util/slova";
-import styles from "./page.module.css";
 import { shuffleArray } from "@/components/util/utils";
 import Play from "@/components/play/play";
+import { getWords } from "../action";
 
 type Props = {
   params: Promise<{
@@ -11,30 +9,23 @@ type Props = {
 };
 export default async function Page({ params }: Props) {
   const { word } = await params;
-  const teamw = word.split("_");
-  const result = tems.filter((word) => word.sach === teamw[0]);
-  const nom = teamw[1];
-
-  let slovo = "Местоимения";
-
-  if (result && nom) {
-    const listt = result[0].nom;
-
-    if (nom === "") {
-      slovo = listt[0];
-    } else {
-      slovo = listt[Number(nom)];
-    }
-  }
-
-  const resultlist = slova.filter((word) => word.name === slovo);
-  let list = slova[0].dict;
-  if (resultlist[0]) {
-    list = shuffleArray(resultlist[0].dict);
+  const resultlist = await getWords(word);
+  let list: {
+    ru: string;
+    port: string;
+  }[] = [];
+  if (resultlist.list) {
+    list = resultlist.list.map((item) => {
+      return {
+        ru: item.rus,
+        port: item.port,
+      };
+    });
+    list = shuffleArray(list);
   }
 
   return (
-    <div className={styles.main}>
+    <div className="main" style={{ paddingTop: "60px" }}>
       <Play list={list}></Play>
     </div>
   );

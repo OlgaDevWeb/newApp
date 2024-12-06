@@ -1,5 +1,5 @@
 .mainbox {
-  margin: 15px;
+  margin: 0;
   padding: 0;
   width: 250px;
   height: 250px;
@@ -34,14 +34,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(216, 209, 233);
+  background-color: var(--maincolor);
   color: var(--front);
   font-size: 25px;
   text-align: center;
+  font-weight: 900;
+  border: 7px rgb(179, 163, 115) solid;
+  box-shadow: 2px 2px 6px 2px rgb(156, 156, 156);
 }
 
 .back {
-  background-color: rgb(146, 224, 220);
+  background-color: rgb(141, 222, 174);
 }
 
 .back {

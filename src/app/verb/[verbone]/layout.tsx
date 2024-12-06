@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { verb } from "../../../components/util/glag";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
+import { getTem } from "../action";
 
 export const metadata: Metadata = {
   title: "Учим европейский португальский",
@@ -17,17 +17,15 @@ export default async function Layout({
 }>) {
   let name = "";
   const { verbone } = await params;
-
-  const result = verb.filter((word) => word.sach === `/${verbone}`);
-  console.log(verbone);
-  if (result) {
-    name = result[0].name;
+  const resultlist = await getTem(verbone);
+  if (resultlist.name) {
+    name = resultlist.name;
   }
 
   return (
     <div>
       <TheHeaderMov
-        name={"Карточки с глаголами: "}
+        name={"Глаголы: "}
         team={name}
         link={"/verb"}
       ></TheHeaderMov>
