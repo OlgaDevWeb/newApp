@@ -4,7 +4,7 @@ export async function getWords(idt: string) {
   try {
     const list = await prisma.words.findMany({ where: { idt } });
     return { ok: true, error: false, list: list };
-  } catch (e) {
+  } catch {
     return { ok: false, error: true };
   }
 }
@@ -19,7 +19,7 @@ export async function getTems(id: string) {
       idh = list[0].idh;
     }
     return { ok: true, error: false, name: name, idh: idh };
-  } catch (e) {
+  } catch {
     return { ok: false, error: true };
   }
 }

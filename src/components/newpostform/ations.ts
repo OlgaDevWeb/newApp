@@ -18,7 +18,6 @@ async function getUser() {
 }
 
 export async function creatPost(data: FormData) {
-  //const title = data.get("title") as string;
   const { title, body } = Object.fromEntries(data) as {
     title: string;
     body: string;
@@ -30,7 +29,7 @@ export async function creatPost(data: FormData) {
   if (userall !== null) {
     authorId = userall;
 
-    const post = await prisma.post.create({
+    await prisma.post.create({
       data: {
         title,
         body,

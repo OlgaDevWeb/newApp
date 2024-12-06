@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
 import Cardсall from "@/components/cardсall/cardсall";
-import { teamm } from "../../../components/util/fraz";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/configs/auth";
 import { getWords } from "../action";
