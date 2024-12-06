@@ -4,7 +4,7 @@ export async function getTems() {
   try {
     const list = await prisma.teamsHigh.findMany();
     return { loading: false, ok: true, error: false, list: list };
-  } catch (e) {
+  } catch {
     return { loading: false, ok: false, error: true };
   }
 }
