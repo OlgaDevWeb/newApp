@@ -30,6 +30,7 @@ type TFraz = {
 export async function addTem() {
   try {
     const team = tems.reverse();
+
     let nom = team.length - 1;
 
     const listteam: Ttem[] = [];
@@ -45,7 +46,7 @@ export async function addTem() {
       data: listteam,
     });
     return { error: "ok", ok: true };
-  } catch (error) {
+  } catch {
     return { error: "Something went wrong", ok: false };
   }
 }
@@ -80,9 +81,9 @@ export async function addTems() {
     const listteam: Ttems[] = [];
 
     while (nom > -1) {
-      let name = team[nom].name;
-      let namet = await prisma?.teamsHigh.findMany({ where: { name } });
-      let idh = namet[0].id;
+      const name = team[nom].name;
+      const namet = await prisma?.teamsHigh.findMany({ where: { name } });
+      const idh = namet[0].id;
       let col = team[nom].nom.length - 1;
 
       while (col > -1) {
@@ -113,9 +114,9 @@ export async function addWords() {
 
     while (nom > -1) {
       let col = list[nom].dict.length - 1;
-      let name = list[nom].name;
+      const name = list[nom].name;
 
-      let namet = await prisma?.teams.findMany();
+      const namet = await prisma?.teams.findMany();
 
       let idt = "";
       namet.map((item) => {
@@ -146,7 +147,6 @@ export async function addWords() {
 
 export async function addFraz() {
   try {
-    const list = fraz_1;
     const tem = teamm;
 
     let nom = tem.length - 1;
@@ -220,8 +220,8 @@ export async function addVerb() {
 
     while (nom < tem.length) {
       let col = 0;
-      let name = tem[nom].name;
-      let namet = await prisma?.teamsVerb.findMany();
+      const name = tem[nom].name;
+      const namet = await prisma?.teamsVerb.findMany();
       let idt = "";
 
       namet.map((item) => {
