@@ -4,7 +4,6 @@ import { prisma } from "@/lib/prisma";
 import { tems } from "@/components/util/team";
 import { slova } from "@/components/util/slova";
 import { teamm } from "@/components/util/fraz";
-import { fraz_1 } from "@/components/util/fraz";
 import { verboall } from "@/components/util/glag";
 import { verb } from "@/components/util/glag";
 type Ttem = {
@@ -155,9 +154,9 @@ export async function addFraz() {
 
     while (nom > -1) {
       let col = tem[nom].list.length - 1;
-      let name = tem[nom].name;
+      const name = tem[nom].name;
 
-      let namet = await prisma?.teamsFraz.findMany();
+      const namet = await prisma?.teamsFraz.findMany();
 
       let idt = "";
 
