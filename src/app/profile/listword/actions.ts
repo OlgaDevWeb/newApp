@@ -1,11 +1,10 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/configs/auth";
+import { auth } from "@/configs/auth";
 
 async function getUser() {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   if (session) {
     if (session.user?.email) {
       return session.user.email;

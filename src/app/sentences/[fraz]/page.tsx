@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Cardсall from "@/components/cardсall/cardсall";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/configs/auth";
+import { auth } from "@/configs/auth";
+
 import { getWords } from "../action";
 type Props = {
   params: Promise<{
@@ -11,13 +11,13 @@ type Props = {
 export default async function Page({ params }: Props) {
   const { fraz } = await params;
 
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   let userID = "";
-  let auth = false;
+  let authl = false;
   if (session) {
     if (session.user?.email) {
       userID = session.user?.email;
-      auth = true;
+      authl = true;
     }
   }
 
@@ -35,7 +35,7 @@ export default async function Page({ params }: Props) {
                   port={item.port}
                   verb={false}
                   user={userID}
-                  auth={auth}
+                  auth={authl}
                   min={false}
                 ></Cardсall>
               </div>

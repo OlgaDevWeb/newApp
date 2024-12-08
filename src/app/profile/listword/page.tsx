@@ -1,19 +1,18 @@
-import { getServerSession } from "next-auth";
 import styles from "./page.module.css";
-import { authOptions } from "@/configs/auth";
+import { auth } from "@/configs/auth";
 import { getAllwords } from "./actions";
 import Cardсall from "@/components/cardсall/cardсall";
 import { TheHeaderMov } from "@/components/theheadermov/theheadermov";
 
 export default async function Page() {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   let userID = "";
-  let auth = false;
+  let authl = false;
   if (session) {
     if (session.user?.email) {
       userID = session.user?.email;
-      auth = true;
+      authl = true;
     }
   }
   const list = await getAllwords();
@@ -33,7 +32,7 @@ export default async function Page() {
                 port={item.port}
                 verb={false}
                 user={userID}
-                auth={auth}
+                auth={authl}
                 min={true}
               ></Cardсall>
             </div>

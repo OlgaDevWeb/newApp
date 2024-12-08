@@ -1,8 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import Cardсall from "@/components/cardсall/cardсall";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/configs/auth";
+import { auth } from "@/configs/auth";
 import { getWords } from "./action";
 import Image from "next/image";
 
@@ -13,15 +12,18 @@ type Props = {
 };
 export default async function Word({ params }: Props) {
   const { word } = await params;
-  const session = await getServerSession(authOptions);
+
+  const session = await auth();
+
   let userID = "";
-  let auth = false;
+  let authl = false;
   if (session) {
     if (session.user?.email) {
       userID = session.user?.email;
-      auth = true;
+      authl = true;
     }
   }
+
   const resultlist = await getWords(word);
   if (resultlist.list) {
     return (
@@ -45,7 +47,7 @@ export default async function Word({ params }: Props) {
                   port={item.port}
                   verb={false}
                   user={userID}
-                  auth={auth}
+                  auth={authl}
                   min={false}
                 ></Cardсall>
               </div>

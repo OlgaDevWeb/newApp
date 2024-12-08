@@ -1,12 +1,11 @@
 "use server";
 
-import { authOptions } from "@/configs/auth";
 import { prisma } from "@/lib/prisma";
-import { getServerSession } from "next-auth";
+import { auth } from "@/configs/auth";
 import { revalidatePath } from "next/cache";
 
 async function getUser() {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   if (session) {
     if (session.user?.email) {
